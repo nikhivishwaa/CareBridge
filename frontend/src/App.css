@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6; /* Tailwind's gray-50 */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  transform: scale(1.05);
+  background-color: #2563eb; /* Tailwind blue */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input:focus {
+  outline: none;
+  border-color: #2563eb; /* Tailwind blue */
+}
+
+input::placeholder {
+  color: #9ca3af; /* Tailwind gray-400 */
+}
+
+
+.sidebar {
+  background-color: #1E3A8A; /* Dark blue background */
   color: white;
+  width: 256px;
+  padding-top: 16px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-item {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-item:hover {
+  background-color: #3B82F6; /* Lighter blue on hover */
+}
+
+.sidebar-item .icon {
+  margin-right: 16px;
+}
+
+.sidebar-item.active {
+  background-color: #3B82F6; /* Active state */
 }
